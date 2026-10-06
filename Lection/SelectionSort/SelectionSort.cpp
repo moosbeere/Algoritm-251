@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <vector>
-using namespace std;
+using std::string;
+using std::vector;
 
 
 int findMin(vector<int> arr, int x) {
@@ -27,12 +28,33 @@ vector<int> selectionSort(vector<int> sort) {
 	return sort;
 }
 
+void selectionSortNumber(vector<string> &arr) {
+	int n = arr.size();
+	for (int i = 0; i < n; i++) {
+		int min_index = i;
+		for (int j = i + 1; j < n; j++) {
+			if (arr[j] < arr[min_index]) min_index = j;
+		}
+		if (min_index != i) {
+			std::swap(arr[i], arr[min_index]);
+		}
+	}
+}
+
 
 int main()
 {
-	vector<int> arr = { 5, 87, 23, 4, 21, 6 };
-	vector<int> sort = selectionSort(arr);
-	for (int a : sort) cout << a << ", ";
+	//vector<int> arr = { 5, 87, 23, 4, 21, 6 };
+	//vector<int> sort = selectionSort(arr);
+	//for (int a : sort) cout << a << ", ";
+
+	vector<string> number = { "23-45-67", "23-45-60", "23-45-43", "23-45-23" };
+	for (auto a : number) std::cout << a << ", ";
+	selectionSortNumber(number);
+	std::cout << "\n";
+	for (auto a : number) std::cout << a << ", ";
+
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
