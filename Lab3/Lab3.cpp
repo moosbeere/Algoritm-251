@@ -45,15 +45,90 @@ void function2() {
     cout << "function2" << endl;
 }
 
+
+
+float sub(float a, float b) {
+    return a - b;
+}
+
+int getMax(int array[], int length, bool(*compare)(int, int)) {
+    int max = array[0];
+    for (int i = 1; i < length; i++) {
+        if (compare(array[i], max)) max = array[i];
+    }
+    return max;
+}
+
+bool max(int x, int y) {
+    if (x > y) return true;
+}
+bool min(int x, int y) {
+    if (x < y) return true;
+}
+
+void negative() {
+    cout << "-\n";
+}
+
+void positive() {
+    cout << "+\n";
+}
+float add(float a, float b) {
+    return a + b;
+}
+
+void(*function(int x))() {
+    if (x < 0) return negative;
+    else return positive;
+}
+
+float (*funcChar(char c))(float, float) {
+    if (c == '+') return add;
+    else if(c=='-') return sub;
+};
+
+int* test() {
+    return new int(13);
+}
+
 int main()
 {
+    //Динамические объекты
+    int* x = new int(25);
+    cout << *x;
+    delete x;
+    int* z = test();
+    cout << z << " = " << *z << "\n";
+    delete z;
+    //delete z;
+
+    int* array = new int[3] {2, 3, 4};
+    for (int* i = array; i < array + 3; i++) {
+        cout << *i << ", ";
+    }
+    delete[] array;
+
     //Функции и массивы
     // указатель на функцию
-    void (*pf)() = function1;
-    void (*pmasf[])() = {function1, function2};
-    pmasf[0]();
-    //pf();
-    pf = function2;
+    //int array[] = { 3, -6, 2, 6, 7 };
+    //cout << getMax(array, 5, max);
+    //function(-3)();
+
+    //cout << funcChar('-')(3, 3);
+    
+
+    /*float (*operation)(float, float);
+    operation = add;
+    cout << operation(3, 6) << "\n";
+
+    operation = sub;
+    cout << operation(3, 6);*/
+
+    //void (*pf)() = function1;
+    //void (*pmasf[])() = {function1, function2};
+    //pmasf[0]();
+    ////pf();
+    //pf = function2;
     //pf();
      
      
