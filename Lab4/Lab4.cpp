@@ -1,51 +1,26 @@
-// Lab4.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-//memory
-//Monster() {
-    //    name = "Tiger";
-    //    health = 10;
-    //    damage = 5;
-    //}
-
-   /* Monster(std::string name, float health, float damage) {
-        this->damage = damage;
-        this->health = health;
-        this->name = name;
-    }*/
-    /*Monster() : Monster("Goblin", 12, 2) {};*/
-
-
 #include <iostream>
-
-
-class Monster {
-public:
-    std::string name;
-    float health;
-    float damage;
-    float maxHealth;
-    
-    Monster(std::string name, float health, float damage, float maxHealth) : name(name), health(health), damage(damage), maxHealth(maxHealth) {};
-    ~Monster() {
-        std::cout << "Объект уничтожается" << std::endl;
-    };
-
-    float getLevel() {
-        return maxHealth / 5;
-    }
-
-};
+#include "Monster.h"
 
 int main()
 {
     setlocale(LC_ALL, "RU");
     Monster truck("Truck", 30, 20, 50);
     std::cout << truck.getLevel() << std::endl;
+    truck.applyDamage(10);
+    std::cout << truck.getHealth() << std::endl;
+    truck.applyDamage();
+    std::cout << truck.getHealth() << std::endl;
+    truck.recovery();
+    std::cout << truck.getHealth() << std::endl;
+    Monster lada("lada", 100, 20, 100);
+    lada.attack(truck);//позыв по сслыке
+    lada.attack(&truck);//позыв по указателю
+    std::cout << "attack: " << truck.getHealth() << std::endl;
+    lada.setHealth(-3);
+    std::cout << lada.getHealth() << std::endl;
+   
 
-
-
-
+    
     //Monster m2();
     //Monster m1("Leo", 3, 4);
     //Monster m = Monster("Zebra", 10, 30);
