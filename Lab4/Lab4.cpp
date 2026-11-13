@@ -1,10 +1,38 @@
 #include <iostream>
 #include "Monster.h"
+#include "AIMonster.h"
+#include "Move.h"
+
+using std::cout;
+
+
+//дружественный метод
+void test(const Monster& m)
+{
+    cout << "name " << m.name << "\n";
+}
+
+int Monster::counter = 0;
 
 int main()
 {
     setlocale(LC_ALL, "RU");
+    //перечисление
+    Move::move(Direction::NORTH);
+    Move::move(Direction::EAST);
+    Move::move(Direction::WEST);
+    Move::move(Direction::SOUTH);
+
+    //Move::move(5);// ошибка
+
+    //дружественный класс
     Monster truck("Truck", 30, 20, 50);
+    AIMonster ai;
+    ai.move(&truck);
+    truck.applyDamage(40);
+    ai.move(&truck);
+
+
     std::cout << truck.getLevel() << std::endl;
     truck.applyDamage(10);
     std::cout << truck.getHealth() << std::endl;
@@ -17,8 +45,11 @@ int main()
     lada.attack(&truck);//позыв по указателю
     std::cout << "attack: " << truck.getHealth() << std::endl;
     lada.setHealth(-3);
-    std::cout << lada.getHealth() << std::endl;
-   
+    std::cout << lada.getHealth() << std::endl;   
+    test(truck);
+    cout << "counter = " << Monster::counter << "\n";
+    Monster::resetCounter();
+    cout << "counter = " << Monster::counter << "\n";
 
     
     //Monster m2();

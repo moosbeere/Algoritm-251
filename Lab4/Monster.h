@@ -11,9 +11,15 @@ private:
     float maxHealth;
 
 public:
+    static int counter;
+
     Monster(string name, float health, float damage, float maxHealth);
     ~Monster();
 
+   friend void test(const Monster& m);
+   friend class AIMonster;
+   static void resetCounter();
+    string getName();
     float getLevel();
     float getMaxHealth();
     float getHealth();

@@ -2,11 +2,24 @@
 #include <iostream>
 
 Monster::Monster(string name, float health, float damage, float maxHealth) :
-	name(name), health(health), damage(damage), maxHealth(maxHealth) {}
+	name(name), health(health), damage(damage), maxHealth(maxHealth) 
+{
+	counter++;
+}
 
 Monster::~Monster()
 {
 	std::cout << "Объект уничтожается" << std::endl;
+}
+
+void Monster::resetCounter()
+{
+	counter = 0;
+}
+
+string Monster::getName()
+{
+	return name;
 }
 
 float Monster::getLevel() {
