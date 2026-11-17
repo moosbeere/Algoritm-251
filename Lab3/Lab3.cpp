@@ -26,8 +26,8 @@ void printArray_2(int* begin, int* end) {
 
 const int cols = 2;
 
-//int (*array)[cols] указатель на массив массивов
-//int* array[] массив указателей
+//int (*array)[cols] пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+//int* array[] пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 void printMatriza(int (*array)[cols], int rows) {
     for (int i = 0; i < rows; i++) {
@@ -82,7 +82,8 @@ void(*function(int x))() {
     else return positive;
 }
 
-float (*funcChar(char c))(float, float) {
+float (*funcChar(char c))(float, float) 
+{
     if (c == '+') return add;
     else if(c=='-') return sub;
 };
@@ -93,7 +94,7 @@ int* test() {
 
 int main()
 {
-    //Динамические объекты
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     int* x = new int(25);
     cout << *x;
     delete x;
@@ -108,8 +109,8 @@ int main()
     }
     delete[] array;
 
-    //Функции и массивы
-    // указатель на функцию
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     //int array[] = { 3, -6, 2, 6, 7 };
     //cout << getMax(array, 5, max);
     //function(-3)();
@@ -132,11 +133,11 @@ int main()
     //pf();
      
      
-    // двумерные массивы
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /*int matriza[3][2] = { {2,3}, {4,5}, {6,7} };
     printMatriza(matriza, std::size(matriza[0]));*/
     
-    //массивы
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     /*int arr[] = {3,5,2,7,7};
     cout << std::begin(arr);
     separator();
@@ -150,21 +151,21 @@ int main()
     //int* pointer;
     //int a = 25;
     //pointer = &a;
-    //cout << "Адрес указателя  " << pointer;
+    //cout << "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ  " << pointer;
     //cout << endl;
-    //cout << "Разименовывание указателя  " << *pointer;
-    //cout << endl;
-
-    //pointer++;//Инкремент
-    //cout << "Инкремент по указателю   " << pointer;
-    //cout << endl;
-    //cout << "Разименовывание указателя  " << *pointer;
-    //pointer--;//декремент
+    //cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ  " << *pointer;
     //cout << endl;
 
-    //cout << "Декремент по указателю   " << pointer;
+    //pointer++;//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    //cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ   " << pointer;
     //cout << endl;
-    //cout << "Разименовывание указателя  " << *pointer;
+    //cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ  " << *pointer;
+    //pointer--;//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    //cout << endl;
+
+    //cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ   " << pointer;
+    //cout << endl;
+    //cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ  " << *pointer;
 
     //int mult = *pointer * 2;
     //cout << endl << mult << endl;
@@ -173,7 +174,7 @@ int main()
     //cout << "*Array   " << *array << endl;
 
     //for (int i = 0; i < 5; i++) {
-    //    cout << *(array + i) << ", ";// аналог cout << array[i] << ", ";
+    //    cout << *(array + i) << ", ";// пїЅпїЅпїЅпїЅпїЅпїЅ cout << array[i] << ", ";
     //}
 
     //cout << endl;
@@ -197,7 +198,7 @@ int main()
     //char chars[] = "String";
     ////cout << chars[3];
     //char* pchars = chars;
-    //cout << (void*)pchars; // для определения адреса указателя на массив символов
+    //cout << (void*)pchars; // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     //const float PI = 3.14f;
     //const float* const pPI = &PI;
