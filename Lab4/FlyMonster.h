@@ -1,6 +1,6 @@
 #pragma once
 #include "Monster.h"
-class FlyMonster :
+class FlyMonster:
     public Monster
 {
 public:

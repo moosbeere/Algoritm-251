@@ -30,6 +30,13 @@ string Monster::getName()
 	return name;
 }
 
+void Monster::setName(string name)
+{
+	if (name == "Drakon")
+		this->name = name;
+	else name = "lol";
+}
+
 float Monster::getLevel() {
 	return this->maxHealth / 5;
 }

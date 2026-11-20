@@ -23,6 +23,7 @@ public:
    friend class AIMonster;
    static void resetCounter();
     string getName();
+    void setName(string name);
     float getLevel();
     float getMaxHealth();
     float getHealth();
