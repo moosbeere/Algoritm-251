@@ -1,6 +1,14 @@
 #include "Monster.h"
 #include <iostream>
 
+Monster::Monster()
+{
+	name = "monster";
+	health = 10;
+	damage = 5;
+	maxHealth = 30;
+}
+
 Monster::Monster(string name, float health, float damage, float maxHealth) :
 	name(name), health(health), damage(damage), maxHealth(maxHealth) 
 {

@@ -2,8 +2,10 @@
 #include "Monster.h"
 #include "AIMonster.h"
 #include "Move.h"
+#include "FlyMonster.h"
 
 using std::cout;
+using std::string;
 
 
 //дружественный метод
@@ -14,42 +16,70 @@ void test(const Monster& m)
 
 int Monster::counter = 0;
 
+struct Item {
+    string name;
+    string description;
+    float price = 0.0f;
+};
+
+void printItem(Item& item) {
+    cout << "Name: " << item.name << "\n";
+    cout << "Description: " << item.description << "\n";
+    cout << "Price: " << item.price << "\n";
+}
+
 int main()
 {
     setlocale(LC_ALL, "RU");
+    //наследование
+    FlyMonster fl;
+    cout << fl.getName() << "\n";
+    FlyMonster fl2("Dragon", 5,7,8,8);
+    fl2.fly();
+    cout << fl2.getHealth() << "\n";
+
+
+    //структура
+    /*Item item;
+    item.name = "Зелье здоровья";
+    item.description = "Восстанавливает 50 единиц здоровья";
+    item.price = 20.0;
+
+    printItem(item);*/
+
     //перечисление
-    Move::move(Direction::NORTH);
+    /*Move::move(Direction::NORTH);
     Move::move(Direction::EAST);
     Move::move(Direction::WEST);
-    Move::move(Direction::SOUTH);
+    Move::move(Direction::SOUTH);*/
 
     //Move::move(5);// ошибка
 
     //дружественный класс
-    Monster truck("Truck", 30, 20, 50);
-    AIMonster ai;
-    ai.move(&truck);
-    truck.applyDamage(40);
-    ai.move(&truck);
+    //Monster truck("Truck", 30, 20, 50);
+    //AIMonster ai;
+    //ai.move(&truck);
+    //truck.applyDamage(40);
+    //ai.move(&truck);
 
 
-    std::cout << truck.getLevel() << std::endl;
-    truck.applyDamage(10);
-    std::cout << truck.getHealth() << std::endl;
-    truck.applyDamage();
-    std::cout << truck.getHealth() << std::endl;
-    truck.recovery();
-    std::cout << truck.getHealth() << std::endl;
-    Monster lada("lada", 100, 20, 100);
-    lada.attack(truck);//позыв по сслыке
-    lada.attack(&truck);//позыв по указателю
-    std::cout << "attack: " << truck.getHealth() << std::endl;
-    lada.setHealth(-3);
-    std::cout << lada.getHealth() << std::endl;   
-    test(truck);
-    cout << "counter = " << Monster::counter << "\n";
-    Monster::resetCounter();
-    cout << "counter = " << Monster::counter << "\n";
+    //std::cout << truck.getLevel() << std::endl;
+    //truck.applyDamage(10);
+    //std::cout << truck.getHealth() << std::endl;
+    //truck.applyDamage();
+    //std::cout << truck.getHealth() << std::endl;
+    //truck.recovery();
+    //std::cout << truck.getHealth() << std::endl;
+    //Monster lada("lada", 100, 20, 100);
+    //lada.attack(truck);//позыв по сслыке
+    //lada.attack(&truck);//позыв по указателю
+    //std::cout << "attack: " << truck.getHealth() << std::endl;
+    //lada.setHealth(-3);
+    //std::cout << lada.getHealth() << std::endl;   
+    //test(truck);
+    //cout << "counter = " << Monster::counter << "\n";
+    //Monster::resetCounter();
+    //cout << "counter = " << Monster::counter << "\n";
 
     
     //Monster m2();

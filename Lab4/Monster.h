@@ -4,15 +4,18 @@ using std::string;
 
 class Monster
 {
-private:
+protected:
     string name;
     float health;
     float damage;
     float maxHealth;
+    void setHealth(float health);
+
 
 public:
     static int counter;
 
+    Monster();
     Monster(string name, float health, float damage, float maxHealth);
     ~Monster();
 
@@ -23,7 +26,6 @@ public:
     float getLevel();
     float getMaxHealth();
     float getHealth();
-    void setHealth(float health);
     void applyDamage(float damage);
     void applyDamage();
     void recovery();
