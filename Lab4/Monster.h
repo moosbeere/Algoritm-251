@@ -30,10 +30,11 @@ public:
     void applyDamage(float damage);
     void applyDamage();
     void recovery();
+    virtual void print();
     //передаем по ссылке
-    void attack(Monster& m);
+    virtual void attack(Monster& m) = 0 ;
     //передаем по указателю
-    void attack(Monster* m);
+    //void attack(Monster* m);
 protected:
     void printWarning(std::string msg);
 };

@@ -3,6 +3,7 @@
 #include "AIMonster.h"
 #include "Move.h"
 #include "FlyMonster.h"
+#include "CrawlingMonster.h"
 
 using std::cout;
 using std::string;
@@ -28,15 +29,61 @@ void printItem(Item& item) {
     cout << "Price: " << item.price << "\n";
 }
 
+bool operator > (FlyMonster m1, FlyMonster m2) {
+    return m1.getHealth() > m2.getHealth();
+}
+
+bool operator < (FlyMonster m1, FlyMonster m2) {
+    return m1.getHealth() < m2.getHealth();
+}
+
 int main()
 {
     setlocale(LC_ALL, "RU");
+    //абстрактный класс
+    FlyMonster f("Dragon", 10, 3, 20, 40);
+    FlyMonster f2("Dragon", 10, 4, 20, 40);
+    f2.attack(f);
+    f.print();
+
+    CrawlingMonster m3;
+
+    m3.attack(f2);
+
+    //перегрузка и виртуальные методы
+    //FlyMonster f1("dragon", 10, 5, 20, 4);
+    //FlyMonster f2("aeroflot", 20, 5, 20, 4);
+    //cout << (f1 > f2) << "\n";
+    //cout << (f1 < f2) << "\n";
+    //FlyMonster sumF = f1 + f2;
+    //sumF.print();
+
+    //cout << (string)sumF << "\n";
+
+
+
+
+
     //наследование
-    FlyMonster fl;
-    cout << fl.getName() << "\n";
-    FlyMonster fl2("Dragon", 5,7,8,8);
-    fl2.fly();
-    cout << fl2.getHealth() << "\n";
+    //FlyMonster fl;
+    //cout << fl.getName() << "\n";
+    //FlyMonster fl2("Dragon", 5,7,8,8);
+    //fl2.fly();
+    //cout << fl2.getHealth() << "\n";
+    //Monster m1;
+    //m1.print();
+    //fl.print();
+
+    //Monster monsters[] = { Monster(), FlyMonster(), FlyMonster() };
+    //for (auto m : monsters) {
+    //    m.print();
+    //}
+
+ /*   Monster* pmonsters[] = { new Monster(), new FlyMonster(), new FlyMonster() };
+    for (Monster* m : pmonsters) {
+        m->print();
+        delete m;
+    }*/
 
 
     //структура

@@ -17,7 +17,7 @@ Monster::Monster(string name, float health, float damage, float maxHealth) :
 
 Monster::~Monster()
 {
-	std::cout << "Объект уничтожается" << std::endl;
+	std::cout << "Объект " << name << " уничтожается" << std::endl;
 }
 
 void Monster::resetCounter()
@@ -62,15 +62,22 @@ void Monster::applyDamage() {
 void Monster::recovery() {
     health = maxHealth;
 }
+void Monster::print()
+{
+	std::cout << "Name " << name << "\n";
+	std::cout << "Health " << health << "\n";
+	std::cout << "Damage " << damage << "\n";
+	std::cout << "Maxhealth " << maxHealth << "\n";
+}
 //передаем по ссылке
-void Monster::attack(Monster& m) {//если мы не хотим менять объект внутри метода, то передаем его как 
-	                             //константную ссылку const Monster& 
-	m.applyDamage(damage);
-}
+//void Monster::attack(Monster& m) {//если мы не хотим менять объект внутри метода, то передаем его как 
+//	                             //константную ссылку const Monster& 
+//	m.applyDamage(damage);
+//}
 //передаем по указателю
-void Monster::attack(Monster* m) {
-	m->applyDamage(damage);
-}
+//void Monster::attack(Monster* m) {
+//	m->applyDamage(damage);
+//}
 
 void Monster::printWarning(std::string msg)
 {
